@@ -1,3 +1,151 @@
-site_name: My Docs
+site_name: MEDC的笔记本
+# site_url: https://note.tonycrane.cc/
+# repo_name: TonyCrane/note
+# repo_url: https://github.com/TonyCrane/note/
+# edit_uri: tree/master/docs
+# site_description: 鹤翔万里（TonyCrane）的笔记本
+copyright: Copyright &copy; 2022-2025 <a href="https://github.com/MEDC29" target="_blank" rel="noopener">MEDC29</a>
+
 theme:
-  name: material
+  name: 'material'
+  language: 'zh'
+  icon:
+    logo: material/dog
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  custom_dir: overrides
+  favicon: images/icon.png
+  features:
+    - content.code.annotate
+    - content.action.edit
+    - navigation.tracking
+    - navigation.top
+    - navigation.tabs
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+  font:
+    code: JetBrains Mono
+  palette:
+    - scheme: default
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MEDC29/
+
+extra_css:
+  - https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i&display=fallback
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - css/tasklist.css
+  - css/card.css
+  - css/custom.css
+
+extra_javascript:
+  - js/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+plugins:
+  - search
+  - heti:
+      extra_skipped_class:
+        - arithmatex
+hooks:
+  - hooks/evalutations.py
+  - hooks/contributors.py
+  - hooks/changelog.py
+  - hooks/outdate.py
+
+validation: # 构建时检测行为
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: ignore
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+# not_in_nav: | # 在docs中但不显示的md文件
+#   todo.md
+#   cs/algorithm/ds-som/index.md
+
+nav:
+  - 首页:
+    - index.md
+  - 编程语言:
+    - C/C++:
+      - C 基础语法: cs/编程语言/C/c笔记.md
+
+  # - Computer Science:
+  #   - cs/index.md
+  #   - 编程语言 & ISA:
+  #     - cs/pl/index.md
+  #     - C/C++:
+  #       - C 语言杂项: cs/pl/c_cpp/c.md
+  #       - C++ 面向对象: cs/pl/c_cpp/oop.md
+  #   - 计算机系统:
+  #     - cs/system/index.md
+  #     - 计算机系统 I:
+  #       - cs/system/cs1/index.md
+  #       - 数据的表示: cs/system/cs1/topic1.md
+  #       - 数字逻辑电路基础: cs/system/cs1/topic2.md
+  #       - 组合逻辑电路设计: cs/system/cs1/topic3.md
+  #       - 时序逻辑电路设计: cs/system/cs1/topic4.md
+  #       - 指令集体系结构: cs/system/cs1/topic5.md
+  #       - 处理器: cs/system/cs1/topic6.md
+  #       - 系统 I 实验部分:
+  #         - 系统 I lab1-1: cs/system/cs1/lab1-1.md
+  #         - 系统 I lab1-2: cs/system/cs1/lab1-2.md
+  #         - 系统 I lab2-1: cs/system/cs1/lab2-1.md
+  #         - 系统 I lab2-2: cs/system/cs1/lab2-2.md
+  #         - 系统 I lab3: cs/system/cs1/lab3.md
+  #         - 系统 I lab4-1: cs/system/cs1/lab4-1.md
+  #         - 系统 I lab4-2: cs/system/cs1/lab4-2.md
+  #         - 系统 I lab5-1: cs/system/cs1/lab5-1.md
+  #         - 系统 I lab5-2: cs/system/cs1/lab5-2.md
+
+  # - Others:
+    # - others/index.md
+    # - 课程笔记: others/notes.md
+    # - 字幕制作系列:
+    #   - others/subs/index.md
+    #   - ass 标签: others/subs/ass.md
+    #   - Aegisub 自动化: others/subs/aegisub/automation.md
+    #   - Aegisub 卡拉 OK 模板: others/subs/aegisub/karaoke.md
+    #   - ffmpeg 套件杂记: others/subs/ffmpeg.md
+    # - TroubleShooting:
+    #   - others/troubleshooting/index.md
+    #   - macOS TroubleShooting: others/troubleshooting/mac.md
