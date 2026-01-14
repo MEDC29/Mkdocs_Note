@@ -1,7 +1,7 @@
 site_name: MEDC的笔记本
 site_url: https://medc29.github.io/Mkdocs_Note/
 repo_name: MEDC的笔记本
-repo_url:  https://medc29.github.io/Mkdocs_Note/
+repo_url: https://github.com/MEDC29/Mkdocs_Note/
 copyright: Copyright &copy; 2022-2025 <a href="https://github.com/MEDC29" target="_blank" rel="noopener">MEDC29</a>
 
 theme:
@@ -10,9 +10,9 @@ theme:
   icon:
     logo: material/dog
     repo: fontawesome/brands/github
-    edit: material/pencil
-  custom_dir: overrides
-  favicon: images/icon.png
+    edit: material/pencil #可以编辑此页的图标
+  custom_dir: overrides #自定义部分主题覆盖默认主题
+  # favicon: images/icon.png
   features:
     - content.code.annotate
     - content.action.edit
@@ -106,44 +106,3 @@ nav:
   - 编程语言:
     - C/C++:
       - C 基础语法: cs/编程语言/C/c笔记.md
-
-  # - Computer Science:
-  #   - cs/index.md
-  #   - 编程语言 & ISA:
-  #     - cs/pl/index.md
-  #     - C/C++:
-  #       - C 语言杂项: cs/pl/c_cpp/c.md
-  #       - C++ 面向对象: cs/pl/c_cpp/oop.md
-  #   - 计算机系统:
-  #     - cs/system/index.md
-  #     - 计算机系统 I:
-  #       - cs/system/cs1/index.md
-  #       - 数据的表示: cs/system/cs1/topic1.md
-  #       - 数字逻辑电路基础: cs/system/cs1/topic2.md
-  #       - 组合逻辑电路设计: cs/system/cs1/topic3.md
-  #       - 时序逻辑电路设计: cs/system/cs1/topic4.md
-  #       - 指令集体系结构: cs/system/cs1/topic5.md
-  #       - 处理器: cs/system/cs1/topic6.md
-  #       - 系统 I 实验部分:
-  #         - 系统 I lab1-1: cs/system/cs1/lab1-1.md
-  #         - 系统 I lab1-2: cs/system/cs1/lab1-2.md
-  #         - 系统 I lab2-1: cs/system/cs1/lab2-1.md
-  #         - 系统 I lab2-2: cs/system/cs1/lab2-2.md
-  #         - 系统 I lab3: cs/system/cs1/lab3.md
-  #         - 系统 I lab4-1: cs/system/cs1/lab4-1.md
-  #         - 系统 I lab4-2: cs/system/cs1/lab4-2.md
-  #         - 系统 I lab5-1: cs/system/cs1/lab5-1.md
-  #         - 系统 I lab5-2: cs/system/cs1/lab5-2.md
-
-  # - Others:
-    # - others/index.md
-    # - 课程笔记: others/notes.md
-    # - 字幕制作系列:
-    #   - others/subs/index.md
-    #   - ass 标签: others/subs/ass.md
-    #   - Aegisub 自动化: others/subs/aegisub/automation.md
-    #   - Aegisub 卡拉 OK 模板: others/subs/aegisub/karaoke.md
-    #   - ffmpeg 套件杂记: others/subs/ffmpeg.md
-    # - TroubleShooting:
-    #   - others/troubleshooting/index.md
-    #   - macOS TroubleShooting: others/troubleshooting/mac.md
