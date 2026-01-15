@@ -25,5 +25,7 @@ jobs:
           path: ~/.cache 
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+
+      # 修改此处：同时安装主题和 heti 插件
+      - name: Install dependencies
+        run: pip install -r requirements.txt
