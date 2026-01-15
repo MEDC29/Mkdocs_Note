@@ -4,20 +4,25 @@ on:
     branches:
       - master 
       - main
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v4
         with:
@@ -26,6 +31,12 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      # 修改此处：同时安装主题和 heti 插件
+      # 关键步骤 1：安装所有依赖（包含 mkdocs-material 和 mkdocs-heti）
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+
+      # 关键步骤 2：执行部署
+      # 加上 --force 确保强制覆盖，加上 --clean 确保清理旧文件
+      - name: Deploy MkDocs
+        run: mkdocs gh-deploy --force --clean
